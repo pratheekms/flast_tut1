@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 app=Flask(__name__)
 
 @app.route('/')
@@ -9,6 +9,24 @@ def hello_world():
 def hello_name():
     return 'hello pratheek'
 
+@app.route('/details')
+def details_json():
+    retJson={
+    'name':'pratheek',
+    'age':25,
+    'contact':[
+    {
+    'email':'p@gmail.com',
+    'phone':'9393939'
+    },
+    {
+    'phone2':242353252
+    }
+    ]
+    }
+
+    return jsonify(retJson)
+
+
 if __name__=="__main__":
     app.run()
-    app.run(debug=True,host='127.0.0.1',port='80')
