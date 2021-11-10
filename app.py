@@ -11,11 +11,6 @@ def hello_world():
 def hello_name():
     return 'hello pratheek'
 
-<<<<<<< HEAD
-if __name__=="__main__":
-    app.run(debug=True)
-    app.run(host='127.0.0.1',port=80)
-=======
 
 @app.route('/details')
 def details_json():
@@ -38,4 +33,3 @@ def details_json():
 
 if __name__ == "__main__":
     app.run(debug=True)
->>>>>>> baaeaf7ca772751222099ef6f4756364400aab52
