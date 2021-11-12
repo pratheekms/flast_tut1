@@ -53,7 +53,7 @@ def details_json():
     return jsonify(retJson)
 
 @app.route('/addition',methods=["POST"])
-def add():
+def addition():
     d_dict=request.get_json()
     num1=d_dict["x"]
     num2=d_dict["y"]
