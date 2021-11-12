@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify,request
+
 app = Flask(__name__)
 
 
@@ -30,6 +31,17 @@ def details_json():
 
     return jsonify(retJson)
 
+@app.route('/addition',methods=["POST"])
+def add():
+    d_dict=request.get_json()
+    num1=d_dict["x"]
+    num2=d_dict["y"]
+    sum=num1+num2
+    retjson={
+        'Sum':sum
+    }
+    return jsonify(retjson),200
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
