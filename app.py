@@ -1,6 +1,27 @@
 from flask import Flask, jsonify,request
+from flask_restful import Api, Resource
 
 app = Flask(__name__)
+api=Api(app)
+
+class Add(Resource):
+    def post(self):
+        req_data=request.get_json()
+        x=int(req_data['x'])
+        y=int(req_data['y'])
+        sum=x+y
+        ret={
+        'Message':sum,
+        'Status Code':200
+        }
+        return jsonify(ret)
+
+
+
+
+
+api.add_resource(Add,'/add')
+
 
 
 @app.route('/')
