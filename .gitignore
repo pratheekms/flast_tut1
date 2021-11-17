@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 #tars
-*.tar.*
-.tar.gz
+#*.tar.*
+#.tar.gz
